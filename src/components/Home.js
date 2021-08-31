@@ -17,7 +17,7 @@ const Home = () => {
     if (input != null) {
       axios
         .get(
-          `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=z8L1GEx871whuVrAK9FCvPIq0szzdUlW&q=${input}`
+          `https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=z8L1GEx871whuVrAK9FCvPIq0szzdUlW&q=${input}`
         )
         .then(function (response) {
           setCities(response.data);
@@ -33,7 +33,7 @@ const Home = () => {
     if (cityKey != null) {
       axios
         .get(
-          `http://dataservice.accuweather.com/locations/v1/${cityKey}?apikey=z8L1GEx871whuVrAK9FCvPIq0szzdUlW&details=true`
+          `https://dataservice.accuweather.com/locations/v1/${cityKey}?apikey=z8L1GEx871whuVrAK9FCvPIq0szzdUlW&details=true`
         )
         .then(function (response) {
           setSelectedCity(response.data);

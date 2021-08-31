@@ -27,7 +27,7 @@ const Favourites = () => {
     try {
       for (let i = 0; i < favourites.length; i++) {
         const response = await axios.get(
-          `http://dataservice.accuweather.com/currentconditions/v1/${favourites[i].Key}?apikey=z8L1GEx871whuVrAK9FCvPIq0szzdUlW`
+          `https://dataservice.accuweather.com/currentconditions/v1/${favourites[i].Key}?apikey=z8L1GEx871whuVrAK9FCvPIq0szzdUlW`
         );
         const weather = response.data[0];
         const currentCityWeather = {

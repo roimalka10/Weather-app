@@ -31,6 +31,9 @@
       border-bottom: none;
     }
   }
+  @media screen and (max-width: 499px) {
+    height: 52px;
+  }
 
   .dayOfWeek {
     display: flex;

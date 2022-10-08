@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { WiCelsius, WiFahrenheit } from "react-icons/wi";
+import { RiCelsiusFill, RiFahrenheitFill } from "react-icons/ri";
 import { BsArrowRightShort } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
@@ -26,7 +26,7 @@ const Navbar = () => {
         transition={{ duration: 0.1, type: "tween" }}
       >
         <a className="appName" href="/">
-          Herolo Weather App
+          Weather App
         </a>
         <div
           className="changeUnits2"
@@ -35,11 +35,13 @@ const Navbar = () => {
             setDegree((prevState) => !prevState);
           }}
         >
-          {degree ? <WiCelsius /> : <WiFahrenheit />}
+          {degree ? (
+            <RiCelsiusFill size={30} />
+          ) : (
+            <RiFahrenheitFill size={30} />
+          )}
         </div>
         <div className={showMenu ? "navbar-items active" : "navbar-items"}>
-          <span className="changeText">change units</span>
-          <BsArrowRightShort className="arrow" />
           <div
             className="changeUnits"
             onClick={() => {
@@ -47,7 +49,11 @@ const Navbar = () => {
               setDegree((prevState) => !prevState);
             }}
           >
-            {degree ? <WiCelsius /> : <WiFahrenheit />}
+            {degree ? (
+              <RiCelsiusFill size={30} />
+            ) : (
+              <RiFahrenheitFill size={30} />
+            )}
           </div>
           <NavLink onClick={handleClick} to="/">
             <span>Home</span>

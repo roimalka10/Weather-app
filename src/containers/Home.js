@@ -83,7 +83,7 @@ const Home = () => {
                 cityKey={selectedCity.Key}
               />
             ) : cities.length > 0 ? (
-              cities.map((city) => {
+              cities.slice(0, 1).map((city) => {
                 return (
                   <CurrentWeather
                     cityName={city.LocalizedName}

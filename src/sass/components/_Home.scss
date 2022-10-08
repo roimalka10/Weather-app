@@ -1,11 +1,12 @@
 body {
   text-align: center;
-  background-color: rgb(133, 194, 229);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: 100%;
-  background-size: cover;
-  background-attachment: fixed;
+  background: linear-gradient(0deg, #2d3751 0%, #30497f 50%, #222649 100%);
+  // background: linear-gradient(
+  //   180deg,
+  //   rgb(136, 52, 42) 0%,
+  //   rgb(125, 68, 38 / 0.9) 68%,
+  //   rgb(186, 129, 99 / 0.85) 100%
+  // );
 }
 
 .home {
@@ -14,40 +15,51 @@ body {
 
 .searchArea {
   display: flex;
-  margin: 50px 15px 0px 15px;
+  margin: 50px 0;
   flex-direction: row-reverse;
   justify-content: center;
-  align-items: center;
-  @media screen and (max-width: 499px) {
-    margin-top: 20px;
+  align-items: flex-end;
+  height: 25vh;
+  @media screen and (max-width: 767px) {
+    height: 10vh;
   }
 }
 
 .searchInfo {
-  display: flex;
   position: relative;
+  width: 90%;
+  max-width: 400px;
   input {
-    font-size: 2rem;
+    font-size: 90%;
+    text-transform: capitalize;
     outline: none;
-    border-bottom: 2px solid rgb(43, 122, 187);
-    padding: 1rem 0rem 1rem 1rem;
-    width: 350px;
-    background-color: rgb(43, 122, 187) !important;
+    padding: 15px 20px;
+    width: 100%;
+    background-color: #fff !important;
     border: none;
+    color: #000;
+    border-radius: 100px;
+    transition: 0.2s all;
     &::placeholder {
-      color: white;
+      color: #000000ad;
+    }
+    &:focus {
+      box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.57);
     }
     @media screen and (max-width: 499px) {
       width: 250px;
     }
   }
   .searchIcon {
-    display: grid;
+    display: flex;
     position: absolute;
-    right: 10px;
-    top: 6px;
+    right: 20px;
+    top: 50%;
     cursor: pointer;
-    color: rgb(68, 68, 68);
+    transform: translateY(-50%);
+    svg {
+      fill: #000;
+    }
   }
 }
 
@@ -56,6 +68,6 @@ body {
   flex-direction: column;
   align-content: space-between;
   margin: 0 auto;
-  font-size: 3rem;
-  color: rgb(68, 68, 68);
+  font-size: 100%;
+  color: #444444;
 }

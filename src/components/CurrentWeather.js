@@ -68,27 +68,34 @@ const CurrentWeather = (props) => {
             >
               <div className="details">
                 {" "}
-                <div className="favIcon">
-                  {showFavourite ? (
-                    <AiFillStar size={48} onClick={HandleClick} />
-                  ) : (
-                    <AiOutlineStar onClick={HandleClick} size={44} />
-                  )}
-                </div>
                 <div className="cityDetails">
-                  <div>
+                  <div className="cityName">
                     {props.cityName}, {props.countryName}
                   </div>
-                  <div>
-                    {isMetric.value
-                      ? cityWeather.Temperature.Metric.Value +
-                        "°" +
-                        cityWeather.Temperature.Metric.Unit
-                      : cityWeather.Temperature.Imperial.Value +
-                        "°" +
-                        cityWeather.Temperature.Imperial.Unit}
+                  <div className="cityText">
+                    <div>
+                      {isMetric.value
+                        ? cityWeather.Temperature.Metric.Value +
+                          "°" +
+                          cityWeather.Temperature.Metric.Unit
+                        : cityWeather.Temperature.Imperial.Value +
+                          "°" +
+                          cityWeather.Temperature.Imperial.Unit}
+                    </div>
+                    <div>{cityWeather.WeatherText}</div>
+                    <div>TODAY</div>
                   </div>
-                  <div>{cityWeather.WeatherText}</div>
+                </div>
+                <div className="fav-button">
+                  {showFavourite ? (
+                    <div className="add-to-fav" onClick={HandleClick}>
+                      Follow
+                    </div>
+                  ) : (
+                    <div className="add-to-fav" onClick={HandleClick}>
+                      Unfollow
+                    </div>
+                  )}
                 </div>
               </div>
 

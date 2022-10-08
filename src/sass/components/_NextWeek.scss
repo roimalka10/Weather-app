@@ -2,7 +2,7 @@
   .loading {
     margin: 0 auto;
   }
-  @media screen and (min-width: 950px) {
+  @media screen and (min-width: 767px) {
     display: flex;
     flex-direction: row;
   }
@@ -12,27 +12,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.7rem;
-  height: 62px;
   width: 100%;
-  background: rgb(29, 101, 160);
-  color: rgb(68, 68, 68);
-  &:not(:last-child) {
-    border-bottom: 1px solid #1f5988;
-  }
 
-  @media screen and (min-width: 950px) {
-    height: 275px;
-    justify-content: center;
-    margin-top: 38px;
-    font-size: 2.2rem;
-    &:not(:last-child) {
-      border-right: 1px solid #1f5988;
-      border-bottom: none;
-    }
+  font-size: 110%;
+  color: #444444;
+  &:not(:last-child) {
+    border-right: 2px solid #ffffff1c;
   }
-  @media screen and (max-width: 499px) {
-    height: 52px;
+  @media screen and (min-width: 767px) {
+    justify-content: center;
+  }
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      border-bottom: 2px solid #ffffff1c;
+      border-right: none;
+    }
   }
 
   .dayOfWeek {
@@ -43,26 +37,23 @@
     align-items: center;
     width: 100%;
     div {
-      width: 150px;
+      padding: 15px 0;
+      width: 100%;
+      @media screen and (max-width: 767px) {
+        width: 33.3%;
+      }
     }
 
-    @media screen and (min-width: 950px) {
+    @media screen and (min-width: 767px) {
       display: flex;
       flex-direction: column;
       height: 100%;
       align-items: center;
       justify-content: space-evenly;
-      div {
-        height: 50px;
-      }
     }
   }
 
   #day {
-    color: black;
     font-weight: 700;
-  }
-  &:hover {
-    border: 2px solid white;
   }
 }

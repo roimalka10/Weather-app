@@ -1,8 +1,8 @@
 import "./sass/styles.scss";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import Favourites from "./components/Favourites";
+import Home from "./containers/Home";
+import Favourites from "./containers/Favourites";
 
 const App = () => {
   return (

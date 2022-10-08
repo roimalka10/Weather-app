@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import CurrentWeather from "./CurrentWeather";
+import CurrentWeather from "../components/CurrentWeather";
 import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 
@@ -37,9 +37,10 @@ const Home = () => {
         )
         .then(function (response) {
           setSelectedCity(response.data);
+          setIsError(false);
         })
         .catch(function (error) {
-          // TODO: error for selected city
+          setIsError(true);
         });
     }
   }, [cityKey]);

@@ -6,6 +6,5 @@ export const store = configureStore({
   reducer: {
     favourites: favouritesSlice,
     isMetric: isMetricSlice,
-    //selectedCity: selectedCitySlice,
   },
 });

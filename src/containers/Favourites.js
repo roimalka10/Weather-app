@@ -23,24 +23,31 @@ const Favourites = () => {
   }, [favourites]);
 
   async function getWeather() {
-    const tempFavourites = [];
     try {
-      for (let i = 0; i < favourites.length; i++) {
-        const response = await axios.get(
-          `https://dataservice.accuweather.com/currentconditions/v1/${favourites[i].Key}?apikey=z8L1GEx871whuVrAK9FCvPIq0szzdUlW`
+      const promises = favourites.map((fav) => {
+        return axios.get(
+          `https://dataservice.accuweather.com/currentconditions/v1/${fav.Key}?apikey=z8L1GEx871whuVrAK9FCvPIq0szzdUlW`
         );
-        const weather = response.data[0];
-        const currentCityWeather = {
-          key: favourites[i].Key,
-          name: favourites[i].Name,
-          weatherText: weather.WeatherText,
-          temperature: weather.Temperature,
-        };
-        tempFavourites.push(currentCityWeather);
-      }
+      });
+
+      const tempFavourites = await Promise.all(promises).then((values) => {
+        const favWeatherResponse = [];
+        for (let i = 0; i < values.length; i++) {
+          const weather = values[i].data[0];
+          favWeatherResponse.push({
+            key: favourites[i].Key,
+            name: favourites[i].Name,
+            weatherText: weather.WeatherText,
+            temperature: weather.Temperature,
+          });
+        }
+        return favWeatherResponse;
+      });
+
       setLocalFav(tempFavourites);
       setIsError(false);
     } catch (error) {
+      console.log(error);
       setIsError(true);
     }
   }

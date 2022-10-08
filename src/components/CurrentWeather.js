@@ -8,12 +8,13 @@ import { motion } from "framer-motion";
 
 const CurrentWeather = (props) => {
   const isMetric = useSelector((state) => state.isMetric);
+  const favourites = useSelector((state) => state.favourites);
+
   const [cityWeather, setCityWeather] = useState(null);
   const [showFavourite, setShowFavourite] = useState(false);
-  const favourites = useSelector((state) => state.favourites);
-  const dispatch = useDispatch();
-
   const [isError, setIsError] = useState(false);
+
+  const dispatch = useDispatch();
 
   const HandleClick = () => {
     const isFavour = favourites.find((fav) => fav.Key == props.cityKey);
@@ -36,7 +37,7 @@ const CurrentWeather = (props) => {
     } else {
       setShowFavourite(false);
     }
-  }, [favourites, props.cityKey]);
+  }, [favourites]);
 
   useEffect(() => {
     axios
@@ -50,7 +51,7 @@ const CurrentWeather = (props) => {
       .catch(function (error) {
         setIsError(true);
       });
-  }, [props.cityKey]);
+  }, []);
 
   return (
     <>

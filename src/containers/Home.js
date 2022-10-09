@@ -48,7 +48,9 @@ const Home = () => {
   return (
     <>
       {isError ? (
-        <div className="error">An error has occured, please refresh</div>
+        <div className="error">
+          An error has occured, please come back later
+        </div>
       ) : (
         <motion.div
           className="home"

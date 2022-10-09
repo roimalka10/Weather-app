@@ -89,11 +89,11 @@ const CurrentWeather = (props) => {
                 <div className="fav-button">
                   {showFavourite ? (
                     <div className="add-to-fav" onClick={HandleClick}>
-                      Follow
+                      Unfollow
                     </div>
                   ) : (
                     <div className="add-to-fav" onClick={HandleClick}>
-                      Unfollow
+                      Follow
                     </div>
                   )}
                 </div>

@@ -75,10 +75,10 @@ const CurrentWeather = (props) => {
                   <div className="cityText">
                     <div>
                       {isMetric.value
-                        ? cityWeather.Temperature.Metric.Value +
+                        ? cityWeather.Temperature.Metric.Value.toFixed(0) +
                           "°" +
                           cityWeather.Temperature.Metric.Unit
-                        : cityWeather.Temperature.Imperial.Value +
+                        : cityWeather.Temperature.Imperial.Value.toFixed(0) +
                           "°" +
                           cityWeather.Temperature.Imperial.Unit}
                     </div>

@@ -54,7 +54,7 @@ const NextWeek = (props) => {
                   <div className="dayOfWeek">
                     <div id="day">{convert(day.Date)}</div>
                     <div>
-                      {day.Temperature.Maximum.Value +
+                      {day.Temperature.Maximum.Value.toFixed(0) +
                         "°" +
                         day.Temperature.Maximum.Unit}
                     </div>

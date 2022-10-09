@@ -7,27 +7,23 @@
 .details {
   max-width: 400px;
   position: relative;
-  margin: 20px auto 60px;
+  margin: 0 auto 60px;
   .cityDetails {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     .cityText {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       align-items: center;
       flex-direction: row-reverse;
       width: 100%;
       font-size: 110%;
       padding-top: 20px;
-      font-family: "Helvetica Now Display", sans-serif;
-      div:nth-child(3) {
-        font-weight: 500;
-      }
     }
 
-    .cityName {
-      font-size: 280%;
+    .cityTemp {
+      font-size: 360%;
     }
   }
   @media (max-width: 767px) {
@@ -37,7 +33,7 @@
 
 .fav-button {
   cursor: pointer;
-  padding-top: 30px;
+  margin-top: 30px;
   .add-to-fav {
     width: fit-content;
     margin: 0 auto;

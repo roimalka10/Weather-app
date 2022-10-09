@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import NextWeek from "./NextWeek";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
@@ -17,7 +16,7 @@ const CurrentWeather = (props) => {
   const dispatch = useDispatch();
 
   const HandleClick = () => {
-    const isFavour = favourites.find((fav) => fav.Key == props.cityKey);
+    const isFavour = favourites.find((fav) => fav.Key === props.cityKey);
     if (isFavour) {
       dispatch(remove(props.cityKey));
     } else {
@@ -37,7 +36,7 @@ const CurrentWeather = (props) => {
     } else {
       setShowFavourite(false);
     }
-  }, [favourites]);
+  }, [favourites, props.cityKey]);
 
   useEffect(() => {
     axios
@@ -51,7 +50,7 @@ const CurrentWeather = (props) => {
       .catch(function (error) {
         setIsError(true);
       });
-  }, []);
+  }, [props.cityKey]);
 
   return (
     <>
@@ -69,31 +68,29 @@ const CurrentWeather = (props) => {
               <div className="details">
                 {" "}
                 <div className="cityDetails">
-                  <div className="cityName">
-                    {props.cityName}, {props.countryName}
+                  <div className="cityTemp">
+                    {isMetric.value
+                      ? cityWeather.Temperature.Metric.Value.toFixed(0) +
+                        "°" +
+                        cityWeather.Temperature.Metric.Unit
+                      : cityWeather.Temperature.Imperial.Value.toFixed(0) +
+                        "°" +
+                        cityWeather.Temperature.Imperial.Unit}
                   </div>
+
                   <div className="cityText">
-                    <div>
-                      {isMetric.value
-                        ? cityWeather.Temperature.Metric.Value +
-                          "°" +
-                          cityWeather.Temperature.Metric.Unit
-                        : cityWeather.Temperature.Imperial.Value +
-                          "°" +
-                          cityWeather.Temperature.Imperial.Unit}
-                    </div>
                     <div>{cityWeather.WeatherText}</div>
-                    <div>TODAY</div>
+                    <div>{props.cityName}</div>
                   </div>
                 </div>
                 <div className="fav-button">
                   {showFavourite ? (
                     <div className="add-to-fav" onClick={HandleClick}>
-                      Follow
+                      unFollow
                     </div>
                   ) : (
                     <div className="add-to-fav" onClick={HandleClick}>
-                      Unfollow
+                      Follow
                     </div>
                   )}
                 </div>

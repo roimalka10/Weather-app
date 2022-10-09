@@ -79,8 +79,6 @@ const CurrentWeather = (props) => {
                   </div>
 
                   <div className="cityText">
-<<<<<<< HEAD
-=======
                     <div>
                       {isMetric.value
                         ? cityWeather.Temperature.Metric.Value.toFixed(0) +
@@ -90,7 +88,6 @@ const CurrentWeather = (props) => {
                           "°" +
                           cityWeather.Temperature.Imperial.Unit}
                     </div>
->>>>>>> a4ab35803897743d729e79c2ec13daf56f0a69f5
                     <div>{cityWeather.WeatherText}</div>
                     <div>{props.cityName}</div>
                   </div>
@@ -98,11 +95,7 @@ const CurrentWeather = (props) => {
                 <div className="fav-button">
                   {showFavourite ? (
                     <div className="add-to-fav" onClick={HandleClick}>
-<<<<<<< HEAD
-                      unFollow
-=======
                       Unfollow
->>>>>>> a4ab35803897743d729e79c2ec13daf56f0a69f5
                     </div>
                   ) : (
                     <div className="add-to-fav" onClick={HandleClick}>

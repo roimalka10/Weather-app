@@ -41,7 +41,7 @@
   .favourite {
     display: flex;
     flex-direction: column;
-    font-size: 3rem;
+    font-size: 240%;
     height: 200px;
     justify-content: space-evenly;
     z-index: 10;
@@ -50,5 +50,5 @@
 
 .noFavourite {
   margin-top: 50px;
-  font-size: 3rem;
+  font-size: 240%;
 }

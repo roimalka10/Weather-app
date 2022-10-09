@@ -55,7 +55,9 @@ const Favourites = () => {
   return (
     <>
       {isError ? (
-        <div className="error">An error has occured, please refresh</div>
+        <div className="error">
+          An error has occured, please come back later
+        </div>
       ) : (
         <div className="favouriteHome">
           {localFav.length > 0 ? (

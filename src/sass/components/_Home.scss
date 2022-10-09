@@ -1,12 +1,13 @@
 body {
   text-align: center;
-  background: linear-gradient(0deg, #2d3751 0%, #30497f 50%, #222649 100%);
+  background: linear-gradient(0deg, #3c6790 0%, #2c5787 50%, #263e58 100%);
   // background: linear-gradient(
   //   180deg,
   //   rgb(136, 52, 42) 0%,
-  //   rgb(125, 68, 38 / 0.9) 68%,
-  //   rgb(186, 129, 99 / 0.85) 100%
+  //   rgb(125, 68, 38 , 0.9) 68%,
+  //   rgb(186, 129, 99 , 0.85) 100%
   // );
+  height: 100%;
 }
 
 .home {
@@ -46,9 +47,6 @@ body {
     &:focus {
       box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.57);
     }
-    @media screen and (max-width: 499px) {
-      width: 250px;
-    }
   }
   .searchIcon {
     display: flex;
@@ -58,7 +56,11 @@ body {
     cursor: pointer;
     transform: translateY(-50%);
     svg {
-      fill: #000;
+      fill: #000000ad;
+      transition: 0.3s all;
+      &:hover {
+        transform: scale(1.15);
+      }
     }
   }
 }

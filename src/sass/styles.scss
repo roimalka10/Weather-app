@@ -3,6 +3,7 @@
 @import "./components/NextWeek";
 @import "./components/CurrentWeather";
 @import "./components/Favourite";
+@import "./components/loader";
 @import url("../assets/fonts/style.css");
 @font-face {
   font-family: "segoe UI";
@@ -19,8 +20,18 @@ html {
   font-weight: 200;
   font-size: 20px;
   line-height: 1;
-  height: 100vh;
+  height: var(--app-height);
 }
+
+#root {
+  height: 100%;
+}
+
+.App {
+  overflow: hidden;
+  height: 100%;
+}
+
 * {
   box-sizing: border-box;
   color: white;

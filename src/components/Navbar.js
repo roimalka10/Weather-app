@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { RiCelsiusFill, RiFahrenheitFill } from "react-icons/ri";
-import { BsArrowRightShort } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { change } from "../store/isMetric";
@@ -25,9 +24,9 @@ const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.1, type: "tween" }}
       >
-        <a className="appName" href="/">
-          Weather App
-        </a>
+        <div className="appName">
+          <a href="/">Weather App</a>
+        </div>
         <div
           className="changeUnits2"
           onClick={() => {
@@ -67,7 +66,7 @@ const Navbar = () => {
           </NavLink>
         </div>
         <div className="burger-icon" onClick={handleClick}>
-          {showMenu ? <FaTimes size={32} /> : <FaBars size={28} />}
+          {showMenu ? <FaTimes size={30} /> : <FaBars size={30} />}
         </div>
       </motion.div>
     </>

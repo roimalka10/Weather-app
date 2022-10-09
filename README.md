@@ -1,6 +1,20 @@
-A weather app test for Herolo, built using React.  
-The commits are not up to par compared to my regular workflow as i have been sick and had a troublesome week :/  
-Usually i'll commit after every working feature and push after a section is done.  
-Saw more problems and errors than any other project or
-assignment i ever had, and I'm happy for it because I've learned so much from this, stuff like Redux and state management, using different api requests, using postman to check the api requests, basic error handling and much more.
-Had a blast working on this!
+# 2022 Weather app
+
+#### A Weather website made with React and Redux built to show state management and Api usage displaying dynamic weather data.
+
+## News
+
+Thought the previous design looked horrible so wanted to change
+almost everything.
+
+## Potential Future Features
+
+- Changing search bar implemetation to live show cities on search.
+
+Used Create-React-App for this project so to run locally
+
+```
+git clone
+npm/yarn install
+npm/yarn start
+```

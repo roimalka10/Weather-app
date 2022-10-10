@@ -22,7 +22,8 @@ body {
   align-items: flex-end;
   height: 25vh;
   @media screen and (max-width: 767px) {
-    height: 10vh;
+    height: 7vh;
+    margin-bottom: 0;
   }
 }
 

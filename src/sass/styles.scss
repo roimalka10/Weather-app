@@ -20,7 +20,7 @@ html {
   font-weight: 200;
   font-size: 20px;
   line-height: 1;
-  height: var(--app-height);
+  height: 100%;
 }
 
 #root {
@@ -28,7 +28,11 @@ html {
 }
 
 .App {
-  overflow: hidden;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.main-app {
   height: 100%;
 }
 

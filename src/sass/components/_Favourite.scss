@@ -1,27 +1,25 @@
 .favouriteHome {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  max-width: 1312px;
-  margin: 50px auto;
+  max-width: 1200px;
+  margin: 80px auto 0;
+  height: calc(100% - 160px);
 }
 
 .favouriteDetails {
-  margin: 30px 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   align-items: center;
-  font-size: 4rem;
-  width: 400px;
-  height: 265px;
-  border-radius: 0.1rem;
+  font-size: 100%;
+  width: 350px;
+  padding: 20px;
   color: white;
-  background-color: #2b7abb;
-  border: 1px solid #1f5988;
+  background-color: #4f8dc05e;
   z-index: 5;
-
+  justify-content: space-between;
   @media screen and (max-width: 499px) {
     margin: 0px 20px;
     width: 300px;
@@ -29,7 +27,6 @@
   }
 
   .favouriteIcon {
-    margin-top: 15px;
     z-index: 100;
   }
 
@@ -41,10 +38,11 @@
   .favourite {
     display: flex;
     flex-direction: column;
-    font-size: 240%;
-    height: 200px;
+    font-size: 140%;
     justify-content: space-evenly;
     z-index: 10;
+    gap: 10px;
+    align-items: flex-start;
   }
 }
 

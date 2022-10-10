@@ -21,20 +21,26 @@
       font-size: 110%;
       padding-top: 20px;
     }
-
     .cityTemp {
       font-size: 360%;
     }
   }
   @media (max-width: 767px) {
-    margin: 40px auto;
+    margin: 6vh auto;
+    .cityDetails .cityTemp {
+      font-size: 260%;
+    }
+    .cityDetails .cityText {
+      padding-top: 10px;
+      font-size: 100%;
+    }
   }
 }
 
 .fav-button {
-  cursor: pointer;
   margin-top: 30px;
   .add-to-fav {
+    cursor: pointer;
     width: fit-content;
     margin: 0 auto;
     display: inline-block;
@@ -50,5 +56,8 @@
   .add-to-fav:hover {
     color: #000;
     background: #fff;
+  }
+  @media (max-width: 767px) {
+    margin-top: 20px;
   }
 }

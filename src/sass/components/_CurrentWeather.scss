@@ -39,25 +39,26 @@
 
 .fav-button {
   margin-top: 30px;
-  .add-to-fav {
-    cursor: pointer;
-    width: fit-content;
-    margin: 0 auto;
-    display: inline-block;
-    border: 2px solid #fff;
-    padding: 7px 20px;
-    border-radius: 100px;
-    transition: 0.4s all;
-    font-size: 90%;
-    font-family: "Helvetica Now Display";
-    letter-spacing: 0.5px;
-  }
 
-  .add-to-fav:hover {
-    color: #000;
-    background: #fff;
-  }
   @media (max-width: 767px) {
     margin-top: 20px;
   }
+}
+.add-to-fav {
+  cursor: pointer;
+  width: fit-content;
+  margin: 0 auto;
+  display: inline-block;
+  border: 2px solid #fff;
+  padding: 7px 20px;
+  border-radius: 100px;
+  transition: 0.4s all;
+  font-size: 90%;
+  font-family: "Helvetica Now Display";
+  letter-spacing: 0.5px;
+}
+
+.add-to-fav:hover {
+  color: #000;
+  background: #fff;
 }

@@ -24,25 +24,12 @@ const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.1, type: "tween" }}
       >
-        <div className="appName">
-          <a href="/">Weather App</a>
-        </div>
-        <div
-          className="changeUnits2"
-          onClick={() => {
-            dispatch(change());
-            setDegree((prevState) => !prevState);
-          }}
-        >
-          {degree ? (
-            <RiCelsiusFill size={30} />
-          ) : (
-            <RiFahrenheitFill size={30} />
-          )}
-        </div>
-        <div className={showMenu ? "navbar-items active" : "navbar-items"}>
+        <div className="navbar-inner">
+          <div className="appName">
+            <a href="/">Weather App</a>
+          </div>
           <div
-            className="changeUnits"
+            className="changeUnits2"
             onClick={() => {
               dispatch(change());
               setDegree((prevState) => !prevState);
@@ -54,19 +41,34 @@ const Navbar = () => {
               <RiFahrenheitFill size={30} />
             )}
           </div>
-          <NavLink onClick={handleClick} to="/">
-            <span>Home</span>
-          </NavLink>
-          <NavLink
-            onClick={handleClick}
-            activeClassName="activated"
-            to="/favourites"
-          >
-            <span>Favourites</span>
-          </NavLink>
-        </div>
-        <div className="burger-icon" onClick={handleClick}>
-          {showMenu ? <FaTimes size={30} /> : <FaBars size={30} />}
+          <div className={showMenu ? "navbar-items active" : "navbar-items"}>
+            <div
+              className="changeUnits"
+              onClick={() => {
+                dispatch(change());
+                setDegree((prevState) => !prevState);
+              }}
+            >
+              {degree ? (
+                <RiCelsiusFill size={30} />
+              ) : (
+                <RiFahrenheitFill size={30} />
+              )}
+            </div>
+            <NavLink onClick={handleClick} to="/">
+              <span>Home</span>
+            </NavLink>
+            <NavLink
+              onClick={handleClick}
+              activeClassName="activated"
+              to="/favourites"
+            >
+              <span>Favourites</span>
+            </NavLink>
+          </div>
+          <div className="burger-icon" onClick={handleClick}>
+            {showMenu ? <FaTimes size={30} /> : <FaBars size={30} />}
+          </div>
         </div>
       </motion.div>
     </>

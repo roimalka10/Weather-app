@@ -65,12 +65,6 @@ const Favourites = () => {
               return (
                 <Link to={`/city/${fav.key}`}>
                   <div className="favouriteDetails">
-                    <div className="favouriteIcon">
-                      <AiFillStar
-                        size={44}
-                        onClick={(e) => handleRemove(fav.key, e)}
-                      />
-                    </div>
                     <div className="favourite">
                       <div>{fav.name}</div>
                       {isMetric.value
@@ -82,6 +76,12 @@ const Favourites = () => {
                           fav.temperature.Imperial.Unit}
                       <div>{fav.weatherText}</div>
                     </div>
+                  </div>
+                  <div
+                    className="add-to-fav"
+                    onClick={(e) => handleRemove(fav.key, e)}
+                  >
+                    Unfollow
                   </div>
                 </Link>
               );

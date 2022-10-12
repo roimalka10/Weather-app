@@ -2,11 +2,24 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 80px auto 0;
-  height: calc(100% - 160px);
+  max-width: 980px;
+  margin: 80px auto 0px;
+  padding-bottom: 60px;
+  height: auto;
+  grid-gap: 40px;
+  gap: 40px;
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    padding: 0px 30px 60px;
+    margin: 40px auto 0px;
+    gap: 50px;
+    & > a {
+      width: 100%;
+    }
+  }
 }
 
 .favouriteDetails {
@@ -14,25 +27,41 @@
   flex-direction: row-reverse;
   align-items: center;
   font-size: 100%;
-  width: 350px;
+  position: relative;
+  width: 300px;
   padding: 20px;
-  color: white;
+  margin-bottom: 20px;
+  color: #fff;
   background-color: #4f8dc05e;
   z-index: 5;
-  justify-content: space-between;
-  @media screen and (max-width: 499px) {
-    margin: 0px 20px;
-    width: 300px;
-    height: 215px;
+  border: 1px solid #4f8dc05e;
+  justify-content: center;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   .favouriteIcon {
     z-index: 100;
   }
 
+  &::after {
+    content: "";
+    position: absolute;
+    border: 1px solid #fff;
+    left: -2px;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
   &:hover {
-    background-color: #1f5988;
-    border: 1px solid white;
+    border: 1px solid #000;
+    &::after {
+      opacity: 1;
+    }
   }
 
   .favourite {
@@ -41,12 +70,16 @@
     font-size: 140%;
     justify-content: space-evenly;
     z-index: 10;
+    grid-gap: 10px;
     gap: 10px;
-    align-items: flex-start;
+    align-items: center;
   }
 }
 
 .noFavourite {
   margin-top: 50px;
   font-size: 240%;
+  @media screen and (max-width: 767px) {
+    font-size: 180%;
+  }
 }

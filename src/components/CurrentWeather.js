@@ -59,12 +59,7 @@ const CurrentWeather = (props) => {
       ) : (
         <div>
           {cityWeather != null ? (
-            <motion.div
-              className="weatherMain"
-              initial={{ y: "10vh", opacity: 0.4 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, type: "tween" }}
-            >
+            <motion.div className="weatherMain">
               <div className="details">
                 {" "}
                 <div className="cityDetails">

@@ -52,12 +52,7 @@ const Home = () => {
           An error has occured, please come back later
         </div>
       ) : (
-        <motion.div
-          className="home"
-          initial={{ y: "5vh", opacity: 0.4 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, type: "tween" }}
-        >
+        <motion.div className="home">
           <div className="searchArea">
             <div className="searchInfo">
               <input

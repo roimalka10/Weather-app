@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { AiFillStar } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 import { remove } from "../store/favourites";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Favourites = () => {
   const favourites = useSelector((state) => state.favourites);
@@ -59,7 +59,12 @@ const Favourites = () => {
           An error has occured, please come back later
         </div>
       ) : (
-        <div className="favouriteHome">
+        <motion.div
+          className="favouriteHome"
+          initial={{}}
+          animate={{}}
+          exit={{}}
+        >
           {localFav.length > 0 ? (
             localFav.map((fav) => {
               return (
@@ -89,7 +94,7 @@ const Favourites = () => {
           ) : (
             <div className="noFavourite">No Favourites Yet</div>
           )}
-        </div>
+        </motion.div>
       )}
     </>
   );

@@ -5,16 +5,15 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   max-width: 980px;
-  margin: 80px auto 0px;
-  padding-bottom: 60px;
-  height: auto;
-  grid-gap: 40px;
+  margin: 0 auto;
+  padding: 60px 0;
+  height: calc(var(--app-height) - 80px);
   gap: 40px;
   @media screen and (max-width: 767px) {
     display: flex;
     justify-content: center;
-    padding: 0px 30px 60px;
-    margin: 40px auto 0px;
+    padding: 60px 30px;
+    grid-gap: 50px;
     gap: 50px;
     & > a {
       width: 100%;

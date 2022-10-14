@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./sass/styles.scss";
 import "./sass/components/loader.scss";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./containers/Home";
-import Favourites from "./containers/Favourites";
 import gif from "./assets/barometer.gif";
+import AnimatedRoutes from "./components/AnimatedRoutes";
 const App = () => {
   const [loading, setLoading] = useState(false);
 
@@ -38,17 +37,7 @@ const App = () => {
         ) : (
           <div className="main-app">
             <Navbar />
-            <Switch>
-              <Route exact path="/city/:cityKey">
-                <Home />
-              </Route>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route exact path="/favourites">
-                <Favourites />
-              </Route>
-            </Switch>
+            <AnimatedRoutes />
           </div>
         )}
       </Router>

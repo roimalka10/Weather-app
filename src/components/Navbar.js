@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { RiCelsiusFill, RiFahrenheitFill } from "react-icons/ri";
 import { motion } from "framer-motion";
@@ -55,16 +55,16 @@ const Navbar = () => {
                 <RiFahrenheitFill size={30} />
               )}
             </div>
-            <NavLink onClick={handleClick} to="/">
+            <Link onClick={handleClick} to="/">
               <span>Home</span>
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               onClick={handleClick}
               activeClassName="activated"
               to="/favourites"
             >
               <span>Favourites</span>
-            </NavLink>
+            </Link>
           </div>
           <div className="burger-icon" onClick={handleClick}>
             {showMenu ? <FaTimes size={30} /> : <FaBars size={30} />}

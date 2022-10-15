@@ -1,19 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./sass/styles.scss";
-import "./sass/components/loader.scss";
-import { BrowserRouter as Router } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import { Route, Routes, useLocation } from "react-router";
 import Navbar from "./components/Navbar";
-import gif from "./assets/barometer.gif";
-import AnimatedRoutes from "./components/AnimatedRoutes";
-const App = () => {
-  const [loading, setLoading] = useState(false);
+import Home from "./containers/Home";
+import Favourites from "./containers/Favourites";
 
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
+const App = () => {
+  const location = useLocation();
 
   var appHeight = function appHeight() {
     var doc = document.documentElement;
@@ -26,21 +20,16 @@ const App = () => {
 
   return (
     <div className="App">
-      <Router>
-        {loading ? (
-          <div className="loader">
-            <div className="loader-logo">
-              <img src={gif} />
-            </div>
-            <div className="loader-text">Loading Site</div>
-          </div>
-        ) : (
-          <div className="main-app">
-            <Navbar />
-            <AnimatedRoutes />
-          </div>
-        )}
-      </Router>
+      <div className="main-app">
+        <Navbar />
+        <AnimatePresence exitBeforeEnter>
+          <Routes key={location.pathname} location={location}>
+            <Route exact path="/city/:cityKey" element={<Home />} />
+            <Route path="/" element={<Home />} />
+            <Route path="favourites" element={<Favourites />} />
+          </Routes>
+        </AnimatePresence>
+      </div>
     </div>
   );
 };

@@ -19,7 +19,7 @@ html {
   font-weight: 200;
   font-size: 20px;
   line-height: 1;
-  height: 100%;
+  height: var(--app-height);
 }
 
 #root {

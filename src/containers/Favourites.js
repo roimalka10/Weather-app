@@ -4,6 +4,7 @@ import { remove } from "../store/favourites";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import AnimateFav from "../components/AnimateFav";
 
 const Favourites = () => {
   const favourites = useSelector((state) => state.favourites);
@@ -53,18 +54,13 @@ const Favourites = () => {
   }
 
   return (
-    <>
+    <AnimateFav>
       {isError ? (
         <div className="error">
           An error has occured, please come back later
         </div>
       ) : (
-        <motion.div
-          className="favouriteHome"
-          initial={{}}
-          animate={{}}
-          exit={{}}
-        >
+        <motion.div className="favouriteHome">
           {localFav.length > 0 ? (
             localFav.map((fav) => {
               return (
@@ -96,7 +92,7 @@ const Favourites = () => {
           )}
         </motion.div>
       )}
-    </>
+    </AnimateFav>
   );
 };
 

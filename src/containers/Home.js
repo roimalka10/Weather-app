@@ -3,6 +3,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import CurrentWeather from "../components/CurrentWeather";
 import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
+import AnimateHome from "../components/AnimateHome";
 
 const axios = require("axios");
 
@@ -46,7 +47,7 @@ const Home = () => {
   }, [cityKey]);
 
   return (
-    <>
+    <AnimateHome>
       {isError ? (
         <div className="error">
           An error has occured, please come back later
@@ -95,7 +96,7 @@ const Home = () => {
           </div>
         </motion.div>
       )}
-    </>
+    </AnimateHome>
   );
 };
 

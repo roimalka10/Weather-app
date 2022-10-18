@@ -93,7 +93,7 @@ const CurrentWeather = (props) => {
               <NextWeek cityKey={props.cityKey}></NextWeek>
             </motion.div>
           ) : (
-            <div>Loading Data</div>
+            <div className="data-loading">Loading Data</div>
           )}
         </div>
       )}
